@@ -1,0 +1,89 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <img
+      src="https://tu-dresden.de/tu-dresden/ressourcen/bilder/ag-studium-fuer-blinde-und-sehbehinderte/TU_Dresden_Logo_blau_HKS41.jpg/@@images/505e4938-574e-4c80-a993-4866aeae03c3.jpeg"
+      alt="tu-dresden"
+      class="image-style"
+    />
+    <div class="navbar-header mx-auto">
+      <h4 class="display-6 text-white mx-auto">
+        Auditorium Mobile Classroom Service
+      </h4>
+    </div>
+    <button type="button" class="btn btn-outline-warning" (click)="openModal()">
+      Add Post
+    </button>
+  </div>
+</nav>
+<div
+  #modal
+  class="modal fade modal-backdrop fade show"
+  tabindex="-1"
+  role="dialog"
+>
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">ADD POSTS</h5>
+      </div>
+      <div class="modal-body">
+        <h6 style="float: left">&nbsp;Post Title</h6>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="titleFromPost"
+          placeholder="Enter the title of the post"
+        />
+        <br />
+        <h6 style="float: left">&nbsp;Post ID</h6>
+        <input
+          type="number"
+          class="form-control"
+          [(ngModel)]="idFromPost"
+          placeholder="Enter the Id for the post"
+        />
+        <br />
+        <h6 style="float: left">&nbsp;Post Image</h6>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="imageLinkFromPost"
+          placeholder="Paste the needful image address(link) from google"
+        />
+        <br />
+        <h6 style="float: left">&nbsp;Post Description</h6>
+        <textarea
+          name="postDescription"
+          class="form-control"
+          id=""
+          cols="20"
+          rows="5"
+          [(ngModel)]="descriptionFromPost"
+          placeholder="Description the key points about your post"
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="saveModalForPosts()"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<app-edit-post [postDetails]="addPost"></app-edit-post>
+
+<!-- <app-edit-post #editPostComponent></app-edit-post> -->

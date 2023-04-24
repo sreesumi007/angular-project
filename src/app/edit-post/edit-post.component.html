@@ -1,0 +1,147 @@
+<!-- <p *ngIf="allowable"><i>Check the bootstrap</i></p> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-6" style="max-width: 640px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://blog.logrocket.com/wp-content/uploads/2022/05/node-vs-python-choose-best-technology-develop-backend.png"
+              class="card-img"
+              alt="python-image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><i>PYTHON COURSE</i></h5>
+              <h6 class="text-muted">id: 18542</h6>
+              <p class="card-text">
+                Python is a high-level, general-purpose programming language.
+                Its design philosophy emphasizes code readability with the use
+                of significant indentation via the off-side rule.Python is
+                dynamically typed and garbage-collected.
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{ date }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="card mb-6" style="max-width: 640px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://images.indepth.dev/images/2020/08/Custom-Theme-for-Angular-Material-Components-Series_-Part-1---Create-a-Theme.png"
+              class="card-img"
+              alt="angular-image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><i>ANGULAR COURSE</i></h5>
+              <h6 class="text-muted">id: 17331</h6>
+              <p class="card-text">
+                Angular is a TypeScript-based, free and open-source web
+                application framework led by the Angular Team at Google and by a
+                community of individuals and corporations. Angular is a complete
+                rewrite from the same team that built AngularJS.
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{ date }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="card mb-6" *ngIf="postDetails.showPost" style="max-width: 640px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src={{postDetails.imageLink}}
+              class="card-img"
+              alt="image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><i>{{postDetails.postTitle}}</i></h5>
+              <h6 class="text-muted">id: {{postDetails.postId}}</h6>
+              <p class="card-text">
+                {{postDetails.postDescription}}
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{ date }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-6" style="max-width: 640px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://www.jrebel.com/sites/default/files/image/2020-05/image-blog-revel-top-java-tools.jpg"
+              class="card-img"
+              alt="java-image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><i>JAVA COURSE</i></h5>
+              <h6 class="text-muted">id: 13642</h6>
+              <p class="card-text">
+                Java is a high-level, class-based, object-oriented programming
+                language that is designed to have as few implementation
+                dependencies as possible.Java was originally developed by James
+                Gosling at Sun Microsystems.
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{ date }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="card mb-6" style="max-width: 640px">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img
+              src="https://www.mend.io/wp-content/media/2023/02/large-blog.png"
+              class="card-img"
+              alt="docker-image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><i>DOCKER COURSE</i></h5>
+              <h6 class="text-muted">id: 14533</h6>
+              <p class="card-text">
+                Docker is a set of platform as a service products that use
+                OS-level virtualization to deliver software in packages called
+                containers. The service has both free and premium tiers. The
+                software that hosts the containers is called Docker Engine.
+              </p>
+              <p class="card-text">
+                <small class="text-muted">Last updated {{ date }}</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container" *ngIf="postDetails.showPost">
+  <p>{{ postDetails.postTitle }}</p>
+  <p>{{ postDetails.postId }}</p>
+  <p>{{ postDetails.imageLink }}</p>
+  <p>{{ postDetails.postDescription }}</p>
+  <p>{{ datePipe.transform(currentDate, "yyyy/MM/dd HH:mm") }}</p>
+</div> -->

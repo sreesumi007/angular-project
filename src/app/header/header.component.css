@@ -1,0 +1,25 @@
+/* h4{
+    text-align: center;
+} */
+
+.image-style{
+    width: 120px;
+    height: 60px;
+}
+
+.modal-backdrop {
+    transition: opacity 0.5s linear;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1 !important;
+  }
+  
+  .modal {
+    text-align: center;
+  }
+  
+  .modal-backdrop.fade.show {
+    opacity: 0.8;
+  }
+
+  
+  
