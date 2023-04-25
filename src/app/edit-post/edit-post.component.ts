@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -9,7 +9,19 @@ import { DatePipe } from '@angular/common';
 })
 export class EditPostComponent implements OnInit {
   constructor(public datePipe: DatePipe) {}
-  @Input() postDetails:any;
+  @Input() postDetails: any;
+  @Output() editPost = new EventEmitter<void>();
+  @Output() deletePost = new EventEmitter<void>();
+
+  editPostCall(callType: string) {
+    if (callType === 'edit') {
+      console.log("came into edit");
+      this.editPost.emit();
+    } else if (callType === 'delete') {
+      console.log("came into delete");
+      this.deletePost.emit();
+    }
+  }
 
   currentDate = new Date();
   date = this.datePipe.transform(this.currentDate, 'yyyy/MM/dd HH:mm');

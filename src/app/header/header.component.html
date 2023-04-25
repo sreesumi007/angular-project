@@ -10,7 +10,12 @@
         Auditorium Mobile Classroom Service
       </h4>
     </div>
-    <button type="button" class="btn btn-outline-warning" (click)="openModal()">
+    <button
+      type="button"
+      class="btn btn-outline-warning"
+      [disabled]="addPost.showPost"
+      (click)="openModal()"
+    >
       Add Post
     </button>
   </div>
@@ -61,6 +66,10 @@
           [(ngModel)]="descriptionFromPost"
           placeholder="Description the key points about your post"
         ></textarea>
+        <br />
+        <p class="text-danger" *ngIf="errorOpen" style="float: left">
+          <i>{{ errorMessage }}</i>
+        </p>
       </div>
       <div class="modal-footer">
         <button
@@ -71,19 +80,20 @@
         >
           Close
         </button>
-        <button
+        <button type="submit" class="btn btn-primary" (click)=" saveModalForPosts()">Save</button>
+        <!-- <button
           type="button"
           class="btn btn-primary"
           (click)="saveModalForPosts()"
         >
           Save
-        </button>
+        </button> -->
       </div>
     </div>
   </div>
 </div>
 
 <br />
-<app-edit-post [postDetails]="addPost"></app-edit-post>
+<app-edit-post [postDetails]="addPost" (editPost)="openModal()" (deletePost)="deletePostCall()"></app-edit-post>
 
 <!-- <app-edit-post #editPostComponent></app-edit-post> -->

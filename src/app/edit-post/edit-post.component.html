@@ -1,4 +1,3 @@
-<!-- <p *ngIf="allowable"><i>Check the bootstrap</i></p> -->
 <div class="container">
   <div class="row">
     <div class="col-md-6">
@@ -76,6 +75,8 @@
                 <small class="text-muted">Last updated {{ date }}</small>
               </p>
             </div>
+            <button href="#" class="btn btn-outline-secondary" style="float: right;" (click)="editPostCall('delete')"><i class="fa fa-trash"></i></button>
+            <button href="#" class="btn btn-outline-secondary" style="float: right;" (click)="editPostCall('edit')"><i class="fa fa-edit"></i></button>
           </div>
         </div>
       </div>
@@ -137,7 +138,6 @@
     </div>
   </div>
 </div>
-
 <!-- <div class="container" *ngIf="postDetails.showPost">
   <p>{{ postDetails.postTitle }}</p>
   <p>{{ postDetails.postId }}</p>

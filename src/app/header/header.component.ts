@@ -7,8 +7,9 @@ import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('modal') modal: ElementRef;
-
   constructor() {}
+  errorMessage: string;
+  errorOpen: boolean;
   titleFromPost: string;
   idFromPost: number;
   imageLinkFromPost: string;
@@ -18,20 +19,38 @@ export class HeaderComponent implements OnInit {
     postId: 0,
     imageLink: '',
     postDescription: '',
-    showPost:false
+    showPost: false,
   };
   // callOpenEditPost() {
   //   console.log('came into call Open Edit');
   //   // this.editPostComponent);
   // }
+
+  deletePostCall(){
+    this.titleFromPost="";
+    this.idFromPost=0;
+    this.imageLinkFromPost="";
+    this.descriptionFromPost="";
+    this.addPost.postTitle = "";
+    this.addPost.postId = 0;
+    this.addPost.imageLink = "";
+    this.addPost.postDescription = "";
+    this.addPost.showPost = false;
+  }
   saveModalForPosts() {
-    console.log('Value Entered - ', this.titleFromPost);
+    console.log('came into save modal post');
     this.addPost.postTitle = this.titleFromPost;
     this.addPost.postId = this.idFromPost;
     this.addPost.imageLink = this.imageLinkFromPost;
     this.addPost.postDescription = this.descriptionFromPost;
     this.addPost.showPost = true;
     this.closeModal();
+    // if (this.addPost.postTitle == '') {
+    //   this.errorOpen = true;
+    //   this.errorMessage = 'Please enter all the fields';
+    // } else {
+    //   this.closeModal();
+    // }
   }
 
   ngOnInit(): void {}
