@@ -55,28 +55,50 @@
         </div>
       </div>
       <br />
-      <div class="card mb-6" *ngIf="postDetails.showPost" style="max-width: 640px">
+      <div
+        class="card mb-6"
+        *ngIf="postDetails.showPost"
+        style="max-width: 640px"
+      >
         <div class="row no-gutters">
           <div class="col-md-4">
             <img
-              src={{postDetails.imageLink}}
+              src="{{ postDetails.imageLink }}"
               class="card-img"
               alt="image"
             />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title"><i>{{postDetails.postTitle}}</i></h5>
-              <h6 class="text-muted">id: {{postDetails.postId}}</h6>
+              <h5 class="card-title">
+                <i>{{ postDetails.postTitle }}</i>
+              </h5>
+              <h6 class="text-muted">id: {{ postDetails.postId }}</h6>
               <p class="card-text">
-                {{postDetails.postDescription}}
+                {{ postDetails.postDescription }}
               </p>
               <p class="card-text">
                 <small class="text-muted">Last updated {{ date }}</small>
               </p>
             </div>
-            <button href="#" class="btn btn-outline-secondary" style="float: right;" (click)="editPostCall('delete')"><i class="fa fa-trash"></i></button>
-            <button href="#" class="btn btn-outline-secondary" style="float: right;" (click)="editPostCall('edit')"><i class="fa fa-edit"></i></button>
+          </div>
+          <div style="float: right">
+            <button
+              href="#"
+              class="btn btn-outline-secondary"
+              style="float: right"
+              (click)="editPostCall('delete')"
+            >
+              <i class="fa fa-trash"></i>
+            </button>
+            <button
+              href="#"
+              class="btn btn-outline-secondary"
+              style="float: right"
+              (click)="editPostCall('edit')"
+            >
+              <i class="fa fa-edit"></i>
+            </button>
           </div>
         </div>
       </div>
