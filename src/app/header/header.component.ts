@@ -21,20 +21,15 @@ export class HeaderComponent implements OnInit {
     postDescription: '',
     showPost: false,
   };
-  // callOpenEditPost() {
-  //   console.log('came into call Open Edit');
-  //   // this.editPostComponent);
-  // }
-
-  deletePostCall(){
-    this.titleFromPost="";
-    this.idFromPost=0;
-    this.imageLinkFromPost="";
-    this.descriptionFromPost="";
-    this.addPost.postTitle = "";
+  deletePostCall() {
+    this.titleFromPost = '';
+    this.idFromPost = 0;
+    this.imageLinkFromPost = '';
+    this.descriptionFromPost = '';
+    this.addPost.postTitle = '';
     this.addPost.postId = 0;
-    this.addPost.imageLink = "";
-    this.addPost.postDescription = "";
+    this.addPost.imageLink = '';
+    this.addPost.postDescription = '';
     this.addPost.showPost = false;
   }
   saveModalForPosts() {
@@ -45,17 +40,10 @@ export class HeaderComponent implements OnInit {
     this.addPost.postDescription = this.descriptionFromPost;
     this.addPost.showPost = true;
     this.closeModal();
-    // if (this.addPost.postTitle == '') {
-    //   this.errorOpen = true;
-    //   this.errorMessage = 'Please enter all the fields';
-    // } else {
-    //   this.closeModal();
-    // }
   }
 
   ngOnInit(): void {}
   openModal() {
-    console.log('Came into open modal');
     const modalEl = this.modal.nativeElement;
     modalEl.classList.add('show');
     modalEl.style.display = 'block';

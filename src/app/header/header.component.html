@@ -80,20 +80,23 @@
         >
           Close
         </button>
-        <button type="submit" class="btn btn-primary" (click)=" saveModalForPosts()">Save</button>
-        <!-- <button
-          type="button"
+        <button
+          type="submit"
           class="btn btn-primary"
           (click)="saveModalForPosts()"
         >
           Save
-        </button> -->
+        </button>
       </div>
     </div>
   </div>
 </div>
 
 <br />
-<app-edit-post [postDetails]="addPost" (editPost)="openModal()" (deletePost)="deletePostCall()"></app-edit-post>
+<app-edit-post
+  [postDetails]="addPost"
+  (editPost)="openModal()"
+  (deletePost)="deletePostCall()"
+></app-edit-post>
 
-<!-- <app-edit-post #editPostComponent></app-edit-post> -->
+
